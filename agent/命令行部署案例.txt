@@ -1,0 +1,13 @@
+mkdir /data/duer/{instance,resource}
+PCDN_AGENT_RUN_PATH=/data/duer  ./edge-provider-installer-831825544462338-2.2.1.0-android.run 
+ chmod  a+x edge-provider-installer-831825544462338-2.2.1.0-android.run
+cd /data/duer/
+export PCDN_AGENT_RUN_PATH=/data/duer/instance   
+export PCDN_RESOURCE_PATH=/data/duer/resource  
+#export PCDN_RESOURCE_LIMIT=30                                                                           #存储大于100G可填写，如果小于，可以不配置参数
+export PCDN_IFNAME=eth0   
+export PCDN_BANDWIDTH=50                                                                                    #大于50
+export PCDN_TRANS_MODE=1  
+PCDN_AGENT_PORT=6898                                                                                            #默认端口不冲突就不用更改8080端口
+export PCDN_SN=aisiqin_2n2basmurbkkffas4vr3d0v3c5zf45wd599cmenx
+/data/duer/bin/edge-provider-agent-loader  &
